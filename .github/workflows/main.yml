@@ -18,10 +18,10 @@ jobs:
         run: |
           echo "Last run: $(date -u)" > changelog.txt
 
-      - name: Commit changes - Your Email 23f1001174@ds.study.iitm.ac.in
+      - name: Commit changes 
         run: |
           git config --global user.name "karthikiitm"
           git config --global user.email "23f1001174@ds.study.iitm.ac.in"
           git add changelog.txt
-          git commit -m "Daily update: $(date -u)" || exit 0  # Avoid failure if no changes
+          git commit -m "Daily update: $(date -u)" || echo "No changes to commit."  # Avoid failure if no changes
           git push
